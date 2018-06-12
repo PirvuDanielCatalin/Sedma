@@ -6,10 +6,10 @@ CutCard::CutCard(string value = "0", string suit = "0"):Card(value,suit)
 {
 }
 
-void CutCard::play_card(Card card, int ord, int& winner, int& sum)
+void CutCard::playCard(Card downcard, int player, int& leader, int& points)
 {
-	if (card.get_value() != "0")
-		winner = ord;
+	if (downcard.getValue() != "0")
+		leader = player;
 }
 
 CutCard::~CutCard()

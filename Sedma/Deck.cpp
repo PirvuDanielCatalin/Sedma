@@ -50,7 +50,7 @@ Deck::Deck(int aux)
 			k++;
 		}
 	}
-	else //aux == 3
+	else if(aux == 3)
 	{
 		this->size = 30;
 		this->used.resize(30); //0 0 ... 0  => 30 de 0-uri
@@ -93,7 +93,7 @@ Deck::Deck(int aux)
 					this->cards.push_back(new Card("K", suits[i]));
 				break;
 			default:
-				if(k>9)
+				if(k>8)
 				for (int i = 0; i < 4; i++)
 					this->cards.push_back(new Card(to_string(k), suits[i]));
 				break;
@@ -106,13 +106,13 @@ Deck::Deck(int aux)
 
 Card* Deck::operator[](int i)
 {
-	return cards[i];
+	return this->cards[i];
 }
 int Deck::getSize()
 {
 	return this->size;
 }
-int Deck::getUsed()
+int Deck::getUsed() //Number of used cards in the deck
 {
 	int val = 0;
 	for (int i = 0; i<size; i++)
@@ -135,6 +135,8 @@ ostream& operator<<(ostream& os, const Deck& deck)
 
 Deck::Deck(const Deck& A)
 {
+	this->cards.clear();
+	
 	this->size = A.size;
 	for (int i = 0; i < A.cards.size(); i++)
 		this->cards.push_back(A.cards[i]);
@@ -144,9 +146,12 @@ Deck& Deck::operator=(const Deck& A)
 {
 	if (this == &A)
 		return *this;
-	size = A.size;
+	this->cards.clear();
+
+	this->size = A.size;
 	for (int i = 0; i < A.cards.size(); i++)
 		this->cards.push_back(A.cards[i]);
+
 	return *this;
 }
 

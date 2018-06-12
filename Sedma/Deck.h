@@ -10,6 +10,7 @@ class Deck
 	vector<Card*> cards;
 	int size;
 	vector<int> used;
+
 public:
 	Deck(int = 2);
 

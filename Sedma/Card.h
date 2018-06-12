@@ -21,12 +21,12 @@ public:
 
 	friend ostream& operator<<(ostream& , const Card&);
 
-	int get_point();
+	int getPoint();
 
-	string get_value();
+	string getValue();
 
 	void set(string, string);
 
-	virtual void play_card(Card , int , int& , int&);
+	virtual void playCard(Card , int , int& , int&);
 };
 

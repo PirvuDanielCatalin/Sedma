@@ -5,7 +5,7 @@ class CutCard :
 {
 public:
 	CutCard(string , string);
-	void play_card(Card , int , int& , int&);
+	void playCard(Card , int , int& , int&);
 	~CutCard();
 };
 

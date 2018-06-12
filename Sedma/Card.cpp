@@ -11,7 +11,7 @@ Card::Card(string _value , string _suit)
 Card& Card::operator=(Card& aux)
 {
 	this->value = aux.value;
-	this->suit = aux.suit;
+	this->suit  = aux.suit;
 	this->point = aux.point;
 	return aux;
 }
@@ -22,12 +22,12 @@ ostream& operator<<(ostream& os, const Card& card)
 	return os;
 }
 
-int Card::get_point()
+int Card::getPoint()
 {
 	return this->point;
 }
 
-string Card::get_value()
+string Card::getValue()
 {
 	return this->value;
 }
@@ -38,8 +38,8 @@ void Card::set(string _value, string _suit)
 	this->suit = _suit;
 }
 
-void Card::play_card(Card card, int ord, int& winner, int& sum)
+void Card::playCard(Card downcard, int player, int& leader, int& points)
 {
-	if (card.get_value() == this->value)
-		winner = ord;
+	if (downcard.getValue() == this->value)
+		leader = player;
 }

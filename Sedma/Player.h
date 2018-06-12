@@ -12,16 +12,16 @@ public:
 	vector<Card*> getHand();
 
 	void AddScore(int);
-	void create(Deck&);
-	void erase(int);
+	void Create(Deck&);
+	void Erase(int);
 
-	void complete(Deck&,int);
-	int valide(string , string);
+	void Complete(Deck&,int);
+	int Valide(string , string);
 	bool CanContinue(string);
 
 	friend ostream& operator<<(ostream& , const Player&);
 
-	int remain();
+	int Remain();
 	
 	~Player();
 };

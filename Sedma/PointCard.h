@@ -5,7 +5,7 @@ class PointCard :
 {
 public:
 	PointCard(string , string);
-	void play_card(Card , int , int& , int&);
+	void playCard(Card , int , int& , int&);
 	~PointCard();
 };
 
